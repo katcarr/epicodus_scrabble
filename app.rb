@@ -8,7 +8,7 @@ get('/') do
 end
 
 get('/scrabble_answer') do
-  @word = params.fetch('word')
+  @word = params.fetch('word').upcase()
   @score = @word.scrabble_score()
 
   erb(:scrabble_answer)
